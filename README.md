@@ -8,6 +8,14 @@ Exercise from the LLM Engineering week 3 / day 5 project [here](https://github.c
 
 This requires that you set your Hugging Face token, `HF_TOKEN`, in a local `.env` file.
 
+**NOTE**: you need to provide your own audio file and save it with the name `sample.mp3` in the [audio](./audio/) folder.
+
 ```bash
 uv run main.py
+```
+
+You might need to install `ffmpeg`. Using `brew` run:
+
+```bash
+brew install ffmpeg
 ```
