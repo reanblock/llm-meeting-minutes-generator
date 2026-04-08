@@ -55,18 +55,19 @@ open_source_transcription = transcription
 
 """## Option 2: Use OpenAI for Transcription"""
 
-# Sign in to OpenAI using Secrets in Colab
+AUDIO_MODEL = "gpt-4o-mini-transcribe"
+OPENAI_API_KEY=os.getenv("OPENAI_API_KEY")
+openai = OpenAI(api_key=OPENAI_API_KEY)
+transcription = openai.audio.transcriptions.create(model=AUDIO_MODEL, file=audio_file, response_format="text")
 
-# AUDIO_MODEL = "gpt-4o-mini-transcribe"
-
-# openai_api_key = userdata.get('OPENAI_API_KEY')
-# openai = OpenAI(api_key=openai_api_key)
-# transcription = openai.audio.transcriptions.create(model=AUDIO_MODEL, file=audio_file, response_format="text")
-# print(transcription)
-
-# display(Markdown(open_source_transcription))
-# print("\n\n")
-# display(Markdown(transcription))
+print("OpenAI Transcription:")
+print("\n\n")
+print(transcription)
+print("\n\n")
+print("Open Source Transcription:")
+print("\n\n")
+print(open_source_transcription)
+print("\n\n")
 
 """# STEP 2: Analyze & Report"""
 
