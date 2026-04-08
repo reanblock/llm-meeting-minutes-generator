@@ -15,6 +15,3 @@ wheels/
 # claude
 .claude
 logs
-
-# audio files
-audio/sample.mp3
